@@ -1,31 +1,55 @@
 
 function initialize() {
+    
     fetch("https://random-word-api.herokuapp.com/word?number=1")
         .then(res => res.json())
-        .then(data => displayWord(data))
-}
+        .then(data => {displayWord(data)})
 
-
-function displayWord(word) {
-    console.log(word)
-    blanks = document.getElementById('blanks');
-    let splitWords = word.map((e) => { return e.split('').join(' ') })
-
-    console.log(splitWords)
-    let h = splitWords.map((a) => {
-
-        span = document.createElement('span');
-        console.log(a)
-        span.innerHTML = a;
-        blanks.append(span)
-    })
-
-
-
-    function myFunction() {
-        document.querySelectorAll("#letter > button").style.color = "red"
     }
 
+
+function displayWord(gotWord) {
+
+    // span = document.createElement("span")
+    // span.innerHTML=gotWord;
+    // document.querySelector('#blanks').append(span)
+
+    
+    gotWord.forEach(a => {a.split('').forEach(e => {
+    blankWords = document.createElement('span')
+    blankWords.innerHTML = e;
+    document.querySelector('#blanks').append(blankWords)
+    })
+})
+
+    // document.querySelector('#blanks').append(span)
+    buttonSelector(gotWord)
+ 
 }
-myFunction()
+
+function buttonSelector(gotWord) {
+    document.querySelectorAll("#letter > button").forEach((e)=>{
+        e.addEventListener('click', ()=>{
+            let selectedLetter = e.innerHTML;
+            
+            gotWord.forEach((a) => {a.split('').forEach((e,b) => {
+                let currentLetter = e.toUpperCase() ;
+                   console.log(currentLetter)
+            if (selectedLetter === currentLetter)
+            {
+                console.log('found letter')
+                console.log(b)
+            }
+                })
+            })
+
+        
+
+
+        })
+    })
+}
+
+
 initialize()
+
