@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.letters {
+   background-color: red; 
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+
+.letters > * {
+    width: 30px;
+    height: 30px;
+}
+
+#blanks {
+background-color: yellow;
+display: flex;
+justify-content: center;
+}
+#blanks > * {
+    font-size: 35px;
+}
+
+#lives {
+    background-color: purple;
+}
+#hangMan {
+background-color: green;
+}
+
+#gameMenu {
+    background-color: gray;
+}
