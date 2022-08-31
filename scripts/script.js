@@ -1,3 +1,4 @@
+
 function initialize() {
     fetch("https://random-word-api.herokuapp.com/word?number=1")
         .then(res => res.json())
@@ -19,6 +20,12 @@ function displayWord(word) {
         blanks.append(span)
     })
 
-}
 
+
+    function myFunction() {
+        document.querySelectorAll("#letter > button").style.color = "red"
+    }
+
+}
+myFunction()
 initialize()
