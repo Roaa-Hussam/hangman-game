@@ -10,35 +10,29 @@ function initialize() {
 
 function displayWord(gotWord) {
 
-    // span = document.createElement("span")
-    // span.innerHTML=gotWord;
-    // document.querySelector('#blanks').append(span)
 
-    
+    console.log(gotWord)
     gotWord.forEach(a => {a.split('').forEach(e => {
     blankWords = document.createElement('span')
-    blankWords.innerHTML = e;
+    blankWords.innerHTML = "_";
     document.querySelector('#blanks').append(blankWords)
     })
 })
-
-    // document.querySelector('#blanks').append(span)
     buttonSelector(gotWord)
  
 }
 
 function buttonSelector(gotWord) {
-    document.querySelectorAll("#letter > button").forEach((e)=>{
-        e.addEventListener('click', ()=>{
-            let selectedLetter = e.innerHTML;
+    document.querySelectorAll("#letter > button").forEach((indButton)=>{
+        indButton.addEventListener('click', ()=>{
+            let selectedLetter = indButton.innerHTML.toLowerCase();
             
-            gotWord.forEach((a) => {a.split('').forEach((e,b) => {
-                let currentLetter = e.toUpperCase() ;
-                   console.log(currentLetter)
+            gotWord.forEach((complWord) => {complWord.split('').forEach((currentLetter,letIndx) => {
             if (selectedLetter === currentLetter)
             {
-                console.log('found letter')
-                console.log(b)
+                console.log(currentLetter)
+                console.log(document.querySelectorAll("#blanks > span")[letIndx])
+                document.querySelectorAll("#blanks > span")[letIndx].innerHTML = selectedLetter;
             }
                 })
             })
