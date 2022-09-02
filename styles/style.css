@@ -2,36 +2,136 @@
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    /* background-color: rgba(99, 123, 92, 0.204); */
+}
+
+.keyboard {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
 }
 
 .letters {
-   background-color: red; 
+   background-color: rgb(233, 232, 232); 
+   border-radius: 20px;
+   box-shadow: 0px 10px 0 0 rgb(177, 177, 177);
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
+   gap: 10px;
+   padding: 50px 20px;
+   width: 500px;
+   
 }
 
 .letters > * {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 36px;
+    background-color: rgb(52, 194, 213);
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0px -2px gray ;
+    box-shadow: 0px 2px 1px 1px  rgb(27, 124, 159);
+    border-radius: 5px;
+    text-align: center;
+    border: 0;
+    
+}
+
+.clicked {
+    position: relative;
+    background-color: rgb(123, 123, 123);
+    box-shadow: 0px 0px 1px 1.5px  rgb(104, 104, 104);
+    text-shadow: 0px -2px rgb(85, 85, 85) ;
+    bottom: -3px;
+    color: rgb(238, 238, 238);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.gameScreen{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(136, 238, 238);
+    border-radius: 20px;
+    padding: 15px;
+    
+}
+
+#hangMan {
+background-color: white;
+
+border-top-left-radius: 20px;
+border-bottom-left-radius: 20px;
+}
+.rightside {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    
+    width: 500px;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: rgb(128, 223, 223);
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
 }
 
 #blanks {
-background-color: yellow;
+
+background-color: white;
+border-radius:20px;
+border: 4px rgb(35, 133, 160);
+border-style:solid;
 display: flex;
 justify-content: center;
+gap: 5px;
+
+padding: 20px;
 }
 #blanks > * {
     font-size: 35px;
 }
 
 #lives {
-    background-color: purple;
+   /* display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center; */
+   border-bottom: 5px dashed rgb(33, 115, 136);
+   
 }
-#hangMan {
-background-color: green;
+#lives > * {
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: sans-serif ;
+    font-style: italic;
+    color: white;
 }
 
+
+
 #gameMenu {
-    background-color: gray;
+    background-color: red;
+}
+#gameMenu > button {
+    padding: 10px;
+    /* width: 40px;
+    height: 36px;  */
+    background-color: rgb(52, 194, 213);
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    /* text-shadow: 0px -2px gray ; */
+    box-shadow: 0px 2px 1px 1px  rgb(27, 124, 159);
+    border-radius: 5px;
+    text-align: center;
+    border: 0;
 }
