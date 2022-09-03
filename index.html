@@ -1,67 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="./styles/style.css" />
-</head>
-
-<body>
-  <section class="container">
-    <main class="gameScreen">
-      <div id="hangMan">
-        <img id='hangmanPic' src="./images/6.jpg" alt="">
-
-      </div>
-
-      <section class="rightside">
-        <div id="lives"></div>
-        <div id="blanks"></div>
-
-        <div id="gameMenu">
-          <button id="playAgain">Play Again</button>
-          <!--<div id="lost"></div>-->
-          <!-- <button id="Hint">Hint</button> -->
+  <body>
+    <section class="container">
+      <main class="gameScreen">
+        <div id="hangMan">
+          <img id="hangmanPic" src="./images/6.jpg" alt="" />
         </div>
-      </section>
-    </main>
-  </section>
-  <section class="keyboard">
-    <div class="letters" id="letter">
-      <button>A</button>
-      <button>B</button>
-      <button>C</button>
-      <button>D</button>
-      <button>E</button>
-      <button>F</button>
-      <button>G</button>
-      <button>H</button>
-      <button>I</button>
-      <button>J</button>
-      <button>K</button>
-      <button>L</button>
-      <button>M</button>
-      <button>N</button>
-      <button>O</button>
-      <button>P</button>
-      <button>Q</button>
-      <button>R</button>
-      <button>S</button>
-      <button>T</button>
-      <button>U</button>
-      <button>V</button>
-      <button>W</button>
-      <button>X</button>
-      <button>Y</button>
-      <button>Z</button>
-    </div>
-  </section>
-  <script src="./scripts/script.js"></script>
 
-</body>
+        <section class="rightside">
+          <div id="blanks"></div>
+          <div id="lives"></div>
 
+          <div id="gameMenu">
+            <button id="playAgain">Play Again</button>
+            <!-- <button id="Hint">Hint</button> -->
+          </div>
+        </section>
+      </main>
+    </section>
+    <section class="keyboard">
+      <div class="letters" id="letter">
+        <button>A</button>
+        <button>B</button>
+        <button>C</button>
+        <button>D</button>
+        <button>E</button>
+        <button>F</button>
+        <button>G</button>
+        <button>H</button>
+        <button>I</button>
+        <button>J</button>
+        <button>K</button>
+        <button>L</button>
+        <button>M</button>
+        <button>N</button>
+        <button>O</button>
+        <button>P</button>
+        <button>Q</button>
+        <button>R</button>
+        <button>S</button>
+        <button>T</button>
+        <button>U</button>
+        <button>V</button>
+        <button>W</button>
+        <button>X</button>
+        <button>Y</button>
+        <button>Z</button>
+      </div>
+    </section>
+    <script src="./scripts/script.js"></script>
+  </body>
 </html>
 
 <!-- 
@@ -75,10 +70,17 @@
  a hint button if presses will show one letter and will fade out and can't be clicked again
  -->
 
+<!-- FEATURES TO IMPLEMENT -->
 <!-- 
-FEATURES TO IMPLEMENT
 
-Loading bar 
+  Loading bar 
+  Canvas API
 
-Canvas API
-  -->
+  Change the Hangman to the original but with 10 pictures 
+  make the currect buttons golden
+  find a dictionary api
+  maybe move lives beneth the hangman
+  gives lives number a white bg-color and shadow.
+  
+  make play again looks like actual pressing
+-->

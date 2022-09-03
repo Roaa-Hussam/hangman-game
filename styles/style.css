@@ -57,9 +57,10 @@
 .gameScreen{
     display: flex;
     justify-content: center;
-    background-color: rgb(136, 238, 238);
+    
+    background-color: rgb(128, 223, 223);
     border-radius: 20px;
-    padding: 15px;
+    padding: 10px;
     
 }
 
@@ -77,18 +78,20 @@ border-bottom-left-radius: 20px;
     width: 500px;
     align-items: stretch;
     justify-content: space-between;
-    background-color: rgb(128, 223, 223);
+    background-color: rgb(136, 238, 238);
 
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-
+}
+.rightside > * {
+    flex:0 0 auto
 }
 
 #blanks {
 
 background-color: white;
 border-radius:20px;
-border: 4px rgb(35, 133, 160);
+border: 4px rgb(151, 213, 213);
 border-style:solid;
 display: flex;
 justify-content: center;
@@ -101,26 +104,17 @@ padding: 20px;
 }
 
 #lives {
-   /* display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center; */
-   border-bottom: 5px dashed rgb(33, 115, 136);
-   
+  
+/*  */
 }
 #lives > * {
     font-size: 40px;
     font-weight: bolder;
     font-family: sans-serif ;
-    font-style: italic;
     color: white;
 }
 
 
-
-#gameMenu {
-    background-color: red;
-}
 #gameMenu > button {
     padding: 10px;
     /* width: 40px;
@@ -134,4 +128,11 @@ padding: 20px;
     border-radius: 5px;
     text-align: center;
     border: 0;
+}
+
+#lives > span.lost {
+    color: rgb(166, 166, 166);
+    text-shadow: 2px 2px rgb(245, 240, 240);
+    font-family: sans-serif;
+   
 }

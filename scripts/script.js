@@ -58,9 +58,9 @@ function buttonSelector(gotWord) {
                     indButton.className = "clicked"
                 }
             }
-            else {
+            if (lives == 0) {
                 console.log('Game over')
-                // document.getElementById('lost').innerHTML = "You Lost!";
+                lost.innerHTML = " You Lost !";
             }
         })
     })
@@ -78,12 +78,15 @@ document.querySelector("#playAgain").addEventListener('click', () => {
 let lives = 6;
 let screenLives = document.createElement('span')
 let yourlives = document.createElement('span')
+let lost = document.createElement('span')
+lost.className = "lost"
 
 yourlives.innerHTML = "Lives : "
 screenLives.innerHTML = lives
 
 document.querySelector("#lives").append(yourlives)
 document.querySelector("#lives").append(screenLives)
+document.querySelector("#lives").append(lost)
 
 
 initialize()
