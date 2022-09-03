@@ -32,9 +32,12 @@ function buttonSelector(gotWord) {
     document.querySelectorAll("#letter > button").forEach((indButton) => {
         indButton.addEventListener('click', () => {
 
+            let blanleft = winCodition();
+            console.log (blanleft)
             let selectedLetter = indButton.innerHTML.toLowerCase();
             let found = false
-            if (lives > 0) {
+
+            if (lives > 0 && blanleft>0) {
                 if (indButton.className !== "clicked") {
                     gotWord.forEach((complWord) => {
                         complWord.split('').forEach((currentLetter, letIndx) => {
@@ -58,35 +61,53 @@ function buttonSelector(gotWord) {
                     indButton.className = "clicked"
                 }
             }
+
+            blanleft = winCodition();
+
             if (lives == 0) {
                 console.log('Game over')
-                lost.innerHTML = " You Lost !";
+                condition.innerHTML = " You Lost !";
+                condition.className = "lost"
             }
+            if (blanleft == 0){
+                console.log('You Won')
+                condition.innerHTML = " You WON !";
+                condition.className = "won"
+            }
+
         })
     })
 
 }
 
 function updateHangmanPicture() {
-    document.getElementById('hangmanPic').src = './images/' + lives + '.jpg';
+    document.getElementById('hangmanPic').src = './images/' + lives + '.png';
 }
 
 document.querySelector("#playAgain").addEventListener('click', () => {
     location.reload()
 })
 
-let lives = 6;
+
+function winCodition(numOfBlanks)
+{
+
+    numOfBlanks = 0;
+  let nn = document.querySelectorAll("#blanks > span").forEach((e)=> {if(e.innerHTML=="_"){numOfBlanks++ } } )
+  return numOfBlanks
+} 
+
+let lives = 10;
 let screenLives = document.createElement('span')
 let yourlives = document.createElement('span')
-let lost = document.createElement('span')
-lost.className = "lost"
+let condition = document.createElement('span')
 
 yourlives.innerHTML = "Lives : "
 screenLives.innerHTML = lives
 
 document.querySelector("#lives").append(yourlives)
 document.querySelector("#lives").append(screenLives)
-document.querySelector("#lives").append(lost)
+document.querySelector("#lives").append(condition)
 
 
 initialize()
